@@ -1,0 +1,7 @@
+/bin
+/target
+/assembly
+/logs
+.project
+.classpath
+.settings

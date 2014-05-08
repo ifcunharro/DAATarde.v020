@@ -1,0 +1,37 @@
+<div class="alert alert-danger alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>¡Cuidado!</strong> Web en versión pre-alpha, sin funcionalidades básicas implementadas.
+</div>
+<div class="row">
+    <div ng-repeat="article in articles" class="panel panel-default">
+        <div class="panel-heading" ng-switch on="article.type">
+
+            <h3 class="panel-title" ng-switch-when="book"><i class="fa fa-book" title="Libro"></i> <strong>{{ article.name }}</strong> ({{ article.date }}) </h3>
+            <h3 class="panel-title" ng-switch-when="movie"><i class="fa fa-film" title="Pel&iacute;cula"></i> <strong>{{ article.name }}</strong> ({{ article.date }}) </h3>
+            <h3 class="panel-title" ng-switch-when="music"><i class="fa fa-music" title="M&uacute;sica"></i> <strong>{{ article.name }}</strong> ({{ article.date }}) </h3>
+            <h3 class="panel-title" ng-switch-when="comic"><i class="fa fa-comments-o" title="C&oacute;mic"></i> <strong>{{ article.name }}</strong> ({{ article.date }}) </h3>
+
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="thumbnail article-thumbnail">
+                        <img ng-src="data:image/jpg;base64,{{ article.picture }}" />
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <p class="article-description">{{ article.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button type="button" class="btn btn-primary" >
+                <i class="fa fa-info-circle"></i> Ver más información
+            </button>
+            <button type="button" class="btn btn-defailt">
+                <i class="fa fa-plus-circle"></i> Añadir a mi colección
+            </button>
+        </div>
+    </div>
+</div>
+
